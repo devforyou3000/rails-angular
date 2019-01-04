@@ -12,8 +12,9 @@ module JobViewAdd
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
     #Allow Devise to respond with JSON (for angular devise)
-   config.to_prepare do
-     DeviseController.respond_to :html, :json
-   end
+    config.assets.initialize_on_precompile = false
+   	config.to_prepare do
+    	DeviseController.respond_to :html, :json
+   	end
   end
 end
